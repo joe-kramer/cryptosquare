@@ -60,6 +60,7 @@ var encrypt = function(sentence) {
 
   //print grid
   for (var r = 0; r < rows; r++){
+    $("#grid").append((r + 1) + " | ");
     for (var c = 0; c < columns; c++){
       $("#grid").append(Cryptosquare[r][c] + " ");
     }
