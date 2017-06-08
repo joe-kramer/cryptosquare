@@ -47,10 +47,12 @@ var encrypt = function(sentence) {
   //Write out encryiption
   for (var c = 0; c < columns; c++){
     for (var r = 0; r < rows; r++){
-      result += Cryptosquare[r][c];
-      resultCounter++;
-      if(resultCounter % 5 === 0) {
-        result += " ";
+      if(Cryptosquare[r][c] !== ""){
+        result += Cryptosquare[r][c];
+        resultCounter++;
+        if(resultCounter % 5 === 0) {
+          result += " ";
+        }
       }
     }
   }
