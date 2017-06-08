@@ -12,8 +12,9 @@ _A classic method for composing secret messages is called a square code. The spa
 
 * _Lowercase message_
 * _Remove punctuation and spaces_
-* _Example of above exception: So instead of writing IIII for 4, you write IV (for 5 minus 1); and instead of writing LXXXX for 90, you write XC._
-* _You have to separate ones, tens, hundreds, and thousands. In other words, 99 is XCIX, not IC._
-* _You cannot count higher than 3,999 in Roman numerals._
+* _Find the smallest square, then assign columns_
+* _Find amount of rows_
+* _Print Cryptosquare by filling grid from left to right, then onto row below_
+* _Separate grid into groups of 5 chars reading down the columns going from left to right_
 
 Copyright (c) 2017 **_Joe Kramer_**
