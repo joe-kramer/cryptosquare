@@ -11,13 +11,15 @@ $(document).ready(function() {
 
 //BACKEND
 var encrypt = function(sentence) {
+  var result = "";
+  var resultCounter = 0;
   var squareBoolean = true;
   var squareCounter = 1;
   var counter = 0;
   var rows = 0;
   var columns = 0;
   var lowerCase = sentence.toLowerCase();
-  var finalString = lowerCase.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()" "]/g,"");
+  var finalString = lowerCase.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()'" "]/g,"");
   //find smallest square
   while(squareBoolean) {
     if (Math.pow(squareCounter, 2) >= finalString.length) {
@@ -42,6 +44,18 @@ var encrypt = function(sentence) {
     }
   }
 
+  //Write out encryiption
+  for (var c = 0; c < columns; c++){
+    for (var r = 0; r < rows; r++){
+      result += Cryptosquare[r][c];
+      resultCounter++;
+      if(resultCounter % 5 === 0) {
+        result += " ";
+      }
+    }
+  }
+
+
   //print grid
   for (var r = 0; r < rows; r++){
     for (var c = 0; c < columns; c++){
@@ -50,5 +64,5 @@ var encrypt = function(sentence) {
     $("#grid").append("</br>");
   }
 
-  return finalString.charAt(0);
+  return result;
 }
